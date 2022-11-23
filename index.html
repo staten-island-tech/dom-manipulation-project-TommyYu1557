@@ -1,37 +1,28 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>grgllgrgll</title>
-</head>
- <body>
-    <h1>wot do</h1>
-    <section class="form-parent">
-        <form id="form">
-            <div class="form-inputs">
-                <div class="input1">
-                    <label for="title">Insert Game Name</label>
-                    <input type="text" id="title" class="textbox1" required>
-                </div>
-                <div class="input2">
-                    <label for="artist">Insert Developer/Publisher Name</label>
-                    <input type="text" id="publisher" class="textbox2" required>
-                </div>
-                <div class="input3">
-                    <label for="url">Image URL</label>
-                    <input type="text" id="url" class="textbox3" required>
-                </div>
-            </div>
-            <div class="button">
-                <input type="submit" value="Submit" class="btn">
-            </div>
-        </form>
-    </section>
-    <section class="display" id="display">
-    </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>dom manipulators</title>
+  </head>
+  <body>
+    <form id="info">
+      <div id="box1">
+        <p id="text">Insert Game Name</p>
+        <input type="text" id="input" />
+      </div>
+      <div id="box2">
+        <p id="text">Insert Publisher/Developer Name</p>
+        <input type="text" id="input2" />
+      </div>
+      <div id="box3">
+        <p><label for="url">Insert Game Image URL</label></p>
+        <input type="url" id="img" placeholder="http://www.dummyurl.com" />
+        <button type="button" id="btn1">Submit</button>
+      </div>
+    </form>
+    <div id="tempBox"></div>
     <script src="index.js"></script>
- </body>
+  </body>
 </html>

@@ -1,26 +1,39 @@
-const DOMSelectors = {
-  button: document.getElementsByClassName("btn"),
-  box: document.querySelectorAll("text-box"),
-  text: document.querySelectorAll("text"),
-  input1: document.querySelector("textbox1"),
-  input2: document.querySelector("textbox2"),
-  input3: document.querySelector("textbox3"),
-  form: document.getElementById("form"),
-  display: document.querySelector("display"),
+const DOMselectors = {
+  button1: document.querySelector(`#btn1`),
+  button2: document.querySelector(`#btn2`),
+  box3: document.querySelector(`#box3`),
+  input1: document.querySelector(`#input`),
+  input2: document.querySelector(`#input2`),
+  img: document.querySelector(`#img`),
+  information: document.querySelector(`#information`),
+  submit: document.querySelector(`#submit`),
+  tempBox: document.querySelector(`#tempBox`),
 };
 
-console.log(DOMSelectors);
-
-DOMSelectors.form.addEventListener("submit", function () {
-  let input1 = DOMSelectors.input1.value,
-    input2 = DOMSelectors.input2.value,
-    input3 = DOMSelectors.input3.value;
-  DOMSelectors.box.insertAdjacentHTML("beforeend", "<p> $(.input1)$ </p>");
-  DOMSelectors.box.insertAdjacentHTML("beforeend", "<p> $(.input1)$ </p>");
-  DOMSelectors.box.insertAdjacentHTML("beforeend", "<p> $(.input1)$ </p>");
-  console.log(input1, input2, input3);
-});
-
-DOMSelectors.form.addEventListener("submit", function (bruh) {
+DOMselectors.button1.addEventListener("click", function (bruh) {
   bruh.preventDefault();
+  makeObject();
+  poof();
 });
+
+function makeObject() {
+  const input1 = DOMselectors.input1.value;
+  const img = DOMselectors.img.value;
+  const input2 = DOMselectors.input2.value;
+  DOMselectors.tempBox.insertAdjacentHTML(
+    "beforeend",
+    `<div class = "tempbox"> <p>${input1}</p> <p><img src= ${img} class="imgView"></p> <p>${input2}</p>  <button class="tempBtn">Delete</button></div>`
+  );
+  DOMselectors.input1.value = "";
+  DOMselectors.img.value = "";
+  DOMselectors.input2.value = "";
+}
+
+function poof() {
+  const remove = document.querySelectorAll(".tempBtn");
+  remove.forEach((eachRemove) => {
+    eachRemove.addEventListener("click", (event) => {
+      event.target.parentElement.remove();
+    });
+  });
+}
